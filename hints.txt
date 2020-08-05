@@ -1,0 +1,23 @@
+1. First thing is to convert data in yolo format  --- python munge_data.py ---->>>>>>>>>>> image_name.txt file contains all labels for that image_name in both train and validation folder ------>>>>>> and image_name's jpg file is inside images/train_or_validation folder
+
+
+
+
+2. create wheat.yaml file
+
+----------------------------------
+only two things to do : correct format data and create yaml file
+----------------------------------
+
+
+3. python train.py --img 1024 --batch 8  --epochs 100 --data wheat.yaml --cfg models/yolov5.yaml --name wheat_model --weights pre_trained_model
+
+
+
+#it starts training. if want to finetune any pretrained models weight then provide --weights param also in above command else not required .
+
+
+
+
+4. After training model:
+python detect.py --source path_to_test_jpg_files --weight provide_your_trained_model_weights.pt

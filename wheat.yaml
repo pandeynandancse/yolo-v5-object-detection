@@ -1,0 +1,8 @@
+train: wheat_data/images/train
+val: wheat_data/images/validation
+
+#no. of classes
+nc: 1
+
+#class name
+names: ['wheat']
